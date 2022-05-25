@@ -3,6 +3,7 @@ import axios from "axios";
 
 import QuerySelector from "./QuerySelector";
 import DataTable from "./DataTable";
+import InfoBar from "./InfoBar";
 import { BASE_URL } from "../constants";
 
 const Dashboard = () => {
@@ -16,7 +17,8 @@ const Dashboard = () => {
 
   return (
     <div className='app-container'>
-      <h2>Atlan Query Runner</h2>
+      <h1>Atlan Query Runner</h1>
+      <InfoBar />
       <QuerySelector fetchData={fetchData} />
       <DataTable data={data} />
     </div>

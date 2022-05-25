@@ -117,31 +117,15 @@ body {
   background-color: #ddd;
 }
 
-.resource-selector ::-ms-expand {
-  padding-right: 1rem;
+.right-arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  margin-right: 5px;
 }
 
-.table-footer {
-  display: flex;
-  justify-content: space-between;
-  margin: 0.75rem 0.5rem;
-}
-
-.pagination-btn {
-  border-radius: 50%;
-  padding: 0.6rem 0.75rem;
-  border: none;
-  background-color: rgb(101, 206, 255);
-  color: black;
-  margin-right: 0.5rem;
-}
-
-.pagination-btn:hover {
-  background-color: rgb(66, 172, 221);
-  cursor: pointer;
-}
-
-.pagination-btn:disabled {
-  background-color: rgb(200, 238, 255);
-  cursor: default;
+.infobar-container {
+  margin-bottom: 1rem;
 }

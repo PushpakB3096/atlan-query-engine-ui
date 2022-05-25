@@ -15,8 +15,8 @@ const Dashboard = () => {
   };
 
   return (
-    <div>
-      <h1>Atlan Query Runner</h1>
+    <div className='app-container'>
+      <h2>Atlan Query Runner</h2>
       <QuerySelector fetchData={fetchData} />
       <DataTable data={data} />
     </div>

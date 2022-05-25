@@ -1,52 +1,124 @@
-.table-cell {
-  padding: 1rem 4rem;
-  border-bottom: 1pt solid black;
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #90d0eb;
 }
 
-.table-row {
-  text-align: center;
-}
-
-#app-container {
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#table-container {
+.table-wrapper {
+  box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.2);
   margin-top: 2rem;
 }
 
-.action-btn {
-  padding: 0.5rem;
+.table {
+  border-radius: 5px;
   border: none;
-  border-radius: 4px;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  background-color: white;
 }
 
-.action-btn:hover {
+.table-cell {
+  text-align: center;
+  border-right: 1px solid #f8f8f8;
+  padding: 0.75rem;
+}
+
+.table-row {
+  border-right: 1px solid #f8f8f8;
+  font-size: 14px;
+}
+
+.table-header {
+  color: #ffffff;
+  background: #37aee2;
+}
+
+.table-header:nth-child(odd) {
+  color: #ffffff;
+  background: #324960;
+}
+
+.table-row:nth-child(even) {
+  background: #eeeeee;
+}
+
+.table-row:hover {
+  background: #eeeeee;
+}
+
+.query-selector-container {
+  width: 25%;
+  text-align: left;
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-left: 4px solid #f36d33;
+  color: #666;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  overflow: auto;
+  padding: 1em 3em;
+  display: block;
+}
+
+.query-box-content {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.table-container {
+  margin-top: 2rem;
+}
+
+.btn {
+  background-image: linear-gradient(-180deg, #37aee2 0%, #1e96c8 100%);
+  border-radius: 0.5rem;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 0.4rem 1.5rem;
+  text-decoration: none;
+  width: max-content;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-image: linear-gradient(-180deg, #1d95c9 0%, #17759c 100%);
+}
+
+.btn:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.delete-all-btn {
-  background-color: rgba(255, 0, 0, 0.7);
-  color: white;
+.query-box-item {
+  margin-right: 1rem;
 }
 
-.delete-all-btn:hover {
-  background-color: rgba(255, 0, 0, 0.9);
+.go-btn {
+  margin-left: 3rem;
 }
 
-.del-btn {
-  margin-left: 1rem;
+.resource-selector {
+  padding: 0.25rem;
+  padding-right: 4rem;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #ddd;
 }
 
-input,
-select {
-  padding: 0.3rem;
-  background-color: rgba(0, 0, 0, 0.06);
-  border: none;
-  width: 5rem;
+.resource-selector ::-ms-expand {
+  padding-right: 1rem;
 }
 
 .table-footer {
@@ -72,13 +144,4 @@ select {
 .pagination-btn:disabled {
   background-color: rgb(200, 238, 255);
   cursor: default;
-}
-
-.search-bar-container {
-  width: 52%;
-}
-
-.search-bar {
-  width: 100%;
-  padding: 0.75rem;
 }

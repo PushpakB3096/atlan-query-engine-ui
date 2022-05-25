@@ -15,15 +15,20 @@ const QuerySelector = props => {
   };
 
   return (
-    <div>
-      <span>
-        SELECT * FROM
-        <select onChange={handleSelection}>
+    <div className='query-selector-container'>
+      <div className='query-box-content'>
+        <span className='query-box-item'>SELECT * FROM</span>
+        <select
+          className='query-box-item resource-selector'
+          onChange={handleSelection}
+        >
           <option value='posts'>POSTS</option>
           <option value='comments'>COMMENTS</option>
         </select>
-        <button onClick={getData}>Go</button>
-      </span>
+        <button className='btn go-btn query-box-item' onClick={getData}>
+          Go
+        </button>
+      </div>
     </div>
   );
 };

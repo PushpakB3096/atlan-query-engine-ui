@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 
-import { truncate } from "../utils/string";
+import { truncate, camelCaseToRegularCase } from "../utils/string";
 
 const DataTable = props => {
   const [columns, setColumns] = useState([]);
+  const [columnHeaders, setColumnHeaders] = useState([]);
   const { data } = props;
 
   useEffect(() => {
@@ -16,23 +17,31 @@ const DataTable = props => {
     }
   }, [data, setColumns]);
 
+  useEffect(() => {
+    const columnHeaders = columns.map(column => {
+      const regularCased = camelCaseToRegularCase(column);
+      return regularCased.toUpperCase();
+    });
+    setColumnHeaders(columnHeaders);
+  }, [columns]);
+
   return (
-    <div>
+    <div className='table-wrapper'>
       <table className='table'>
         <tbody>
           <tr>
-            {columns.map(column => (
-              <th key={column} className='table-cell'>
+            {columnHeaders.map(column => (
+              <th key={column} className='table-cell table-header'>
                 {column}
               </th>
             ))}
           </tr>
           {data.map(row => {
             return (
-              <tr key={row.id}>
+              <tr key={row.id} className='table-row'>
                 {columns.map(col => {
                   return (
-                    <td key={col} className='table-cell table-row'>
+                    <td key={col} className='table-cell'>
                       {truncate(row[col])}
                     </td>
                   );

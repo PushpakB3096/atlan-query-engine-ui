@@ -8,11 +8,13 @@ import { BASE_URL } from "../constants";
 
 const Dashboard = () => {
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const fetchData = resourceType => {
-    axios
-      .get(`${BASE_URL}/${resourceType || "posts"}`)
-      .then(data => setData(data.data));
+  const fetchData = async resourceType => {
+    setIsLoading(true);
+    const { data } = await axios.get(`${BASE_URL}/${resourceType || "posts"}`);
+    setData(data);
+    setIsLoading(false);
   };
 
   return (
@@ -20,7 +22,7 @@ const Dashboard = () => {
       <h1>Atlan Query Runner</h1>
       <InfoBar />
       <QuerySelector fetchData={fetchData} />
-      <DataTable data={data} />
+      <DataTable data={data} isLoading={isLoading} />
     </div>
   );
 };

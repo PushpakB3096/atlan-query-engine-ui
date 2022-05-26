@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 
 import { truncate, camelCaseToRegularCase } from "../utils/string";
+import Spinner from "./Spinner";
 
 const DataTable = props => {
   const [columns, setColumns] = useState([]);
   const [columnHeaders, setColumnHeaders] = useState([]);
-  const { data } = props;
+  const { data, isLoading } = props;
 
   useEffect(() => {
     if (data.length) {
@@ -24,6 +25,10 @@ const DataTable = props => {
     });
     setColumnHeaders(columnHeaders);
   }, [columns]);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div className='table-wrapper'>

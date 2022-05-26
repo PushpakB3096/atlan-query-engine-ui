@@ -1,5 +1,6 @@
 import React from "react";
 
+// InfoBar is a static component that displays instructions on how to interact with the application
 const InfoBar = () => {
   return (
     <div className='infobar-container'>
@@ -11,7 +12,7 @@ const InfoBar = () => {
         <li>Hit the 'Go' button.</li>
         <li>
           You should now be seeing the results of your query in a tabular mode.
-          If not, contact us at care@atlan.com
+          If not, contact us at support@atlan.com
         </li>
       </ul>
     </div>
